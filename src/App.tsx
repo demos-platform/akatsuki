@@ -1,28 +1,17 @@
 import * as React from 'react';
+import Button from './components/button/button'
 
 export interface Props {
   name: string;
   enthusiasmLevel?: number;
 }
 
-function Hello({ name, enthusiasmLevel = 1 }: Props) {
-  if (enthusiasmLevel <= 0) {
-    throw new Error('You could be a little more enthusiastic. :D');
+class Hello extends React.Component<Props, object> {
+  render() {
+    return (
+      <Button>12345</Button>
+    )
   }
-
-  return (
-    <div className="hello">
-      <div className="greeting">
-        Hello {name + getExclamationMarks(enthusiasmLevel)}
-      </div>
-    </div>
-  );
-}
-
-// helpers
-
-function getExclamationMarks(numChars: number) {
-  return Array(numChars + 1).join('!');
 }
 
 export default Hello;
